@@ -195,236 +195,196 @@ include 'koneksi.php';
 
                                     <!-- Page-body start -->
                                     <div class="page-body">
+                                        <div class="row">
 
-                                        <!-- File upload card start -->
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5>File Upload Excel (.xls or .xlsx)</h5>
-                                                <div class="card-header-right">
-                                                    <ul class="list-unstyled card-option">
-                                                        <li>
-                                                            <i class="icofont icofont-simple-left "></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-maximize full-card"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-minus minimize-card"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-refresh reload-card"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-error close-card"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <!-- user card start -->
+                                            <div class="col-sm-3">
+                                                <a href="jatemover.php">
+                                                    <div class="card bg-c-pink text-white widget-visitor-card">
+                                                        <div class="card-block-small text-center">
+                                                            <h2><?php
+                                                                $tampilkan5 = "SELECT COUNT(*) as hitung FROM tagihan where tgl_akad = curdate()";
+                                                                $str = mysqli_query($connect, $tampilkan5);
+                                                                while ($data = mysqli_fetch_array($str)) {
+                                                                    echo $data['hitung'];
+                                                                } ?>
+                                                            </h2>
+                                                            <h4>Lewat Jatem</h4>
+                                                            <i class="ti-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
 
-                                            <div class="col-md-12">
-                                                <form class="form-horizontal" method="POST" action="import_data.php" enctype="multipart/form-data">
-                                                    <div class="col-sm-7"><input type="file" name="upload_file" 54 class="form-control" accept=".xls, .xlsx"></div>
-                                                    <div class="col-sm-12">&nbsp;</div>
-                                                    <div class="col-sm-8"><input name="submit" type="submit" value="Import" class="btn btn-success btn-sm"></div>
-                                                    <div class="col-sm-4">&nbsp;</div>
-                                                    <div class="col-sm-12">&nbsp;</div>
-                                                </form>
+                                            <div class="col-sm-3">
+                                                <a href="jatem.php">
+                                                    <div class="card bg-c-lite-green text-white widget-visitor-card">
+                                                        <div class="card-block-small text-center">
+                                                            <h2><?php
+                                                                $tampilkan5 = "SELECT COUNT(*) as hitung FROM tagihan where tgl_akad = curdate()";
+                                                                $str = mysqli_query($connect, $tampilkan5);
+                                                                while ($data = mysqli_fetch_array($str)) {
+                                                                    echo $data['hitung'];
+                                                                } ?>
+                                                            </h2>
+                                                            <h4>Tag. Hari Ini</h4>
+                                                            <i class="ti-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
+
+
+                                            <div class="col-sm-3">
+                                                <a href="jatem01.php">
+                                                    <div class="card bg-c-blue text-white widget-visitor-card">
+                                                        <div class="card-block-small text-center">
+                                                            <h2><?php
+                                                                $tampilkan6 = "SELECT COUNT(*) as hitung1 FROM tagihan where tgl_akad = curdate()+6 ";
+                                                                $str = mysqli_query($connect, $tampilkan6);
+                                                                while ($data = mysqli_fetch_array($str)) {
+                                                                    echo $data['hitung1'];
+                                                                } ?></h2>
+                                                            <h4>Tag. H-7 Hari</h4>
+                                                            <i class="ti-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <a href="jatem02.php">
+
+                                                    <div class="card bg-c-yellow text-white widget-visitor-card">
+                                                        <div class="card-block-small text-center">
+                                                            <h2><?php
+                                                                $tampilkan7 = "SELECT COUNT(nama) as hitung2 FROM tagihan WHERE tgl_jt = now()+30";
+                                                                $str = mysqli_query($connect, $tampilkan7);
+                                                                while ($data = mysqli_fetch_array($str)) {
+                                                                    echo $data['hitung2'];
+                                                                } ?></h2>
+                                                            <h4>Tag. H-30 Hari</h4>
+                                                            <i class="ti-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Zero config.table start -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>DATA TAGIHAN</h5>
+                                            <!--         <span>Data Table Transaksi Penawaran Harga Customer</span> -->
+
 
                                         </div>
 
-                                        <!-- File upload card end -->
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <!-- user card start -->
-                                                <div class="col-sm-3">
-                                                    <a href="jatemover.php">
-                                                        <div class="card bg-c-pink text-white widget-visitor-card">
-                                                            <div class="card-block-small text-center">
-                                                                <h2><?php
-                                                                    $tampilkan5 = "SELECT COUNT(*) as hitung FROM tagihan where tgl_akad = curdate()";
-                                                                    $str = mysqli_query($connect, $tampilkan5);
-                                                                    while ($data = mysqli_fetch_array($str)) {
-                                                                        echo $data['hitung'];
-                                                                    } ?>
-                                                                </h2>
-                                                                <h4>Lewat Jatem</h4>
-                                                                <i class="ti-user"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-
-                                                <div class="col-sm-3">
-                                                    <a href="jatem.php">
-                                                        <div class="card bg-c-lite-green text-white widget-visitor-card">
-                                                            <div class="card-block-small text-center">
-                                                                <h2><?php
-                                                                    $tampilkan5 = "SELECT COUNT(*) as hitung FROM tagihan where tgl_akad = curdate()";
-                                                                    $str = mysqli_query($connect, $tampilkan5);
-                                                                    while ($data = mysqli_fetch_array($str)) {
-                                                                        echo $data['hitung'];
-                                                                    } ?>
-                                                                </h2>
-                                                                <h4>Tag. Hari Ini</h4>
-                                                                <i class="ti-user"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
+                                        <div class="card-block">
 
 
-                                                <div class="col-sm-3">
-                                                    <a href="jatem01.php">
-                                                        <div class="card bg-c-blue text-white widget-visitor-card">
-                                                            <div class="card-block-small text-center">
-                                                                <h2><?php
-                                                                    $tampilkan6 = "SELECT COUNT(*) as hitung1 FROM tagihan where tgl_akad = curdate()+6 ";
-                                                                    $str = mysqli_query($connect, $tampilkan6);
-                                                                    while ($data = mysqli_fetch_array($str)) {
-                                                                        echo $data['hitung1'];
-                                                                    } ?></h2>
-                                                                <h4>Tag. H-7 Hari</h4>
-                                                                <i class="ti-user"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
+                                            <div class="dt-responsive table-responsive">
+                                                <table id="simpletable" class="table table-striped table-bordered nowrap">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No Account</th>
+                                                            <th>Nama</th>
+                                                            <th>Tanggal Akad</th>
+                                                            <th>Kredit</th>
+                                                            <th>Tanggal JT</th>
+                                                            <th>Angsuran01</th>
+                                                            <th>Tagihan Pokok</th>
+                                                            <th>Tagihan Jasa</th>
+                                                            <th>Telp</th>
+                                                            <th>Kirim SMS</th>
 
-                                                <div class="col-sm-3">
-                                                    <a href="jatem02.php">
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-                                                        <div class="card bg-c-yellow text-white widget-visitor-card">
-                                                            <div class="card-block-small text-center">
-                                                                <h2><?php
-                                                                    $tampilkan7 = "SELECT COUNT(nama) as hitung2 FROM tagihan WHERE tgl_jt = now()+30";
-                                                                    $str = mysqli_query($connect, $tampilkan7);
-                                                                    while ($data = mysqli_fetch_array($str)) {
-                                                                        echo $data['hitung2'];
-                                                                    } ?></h2>
-                                                                <h4>Tag. H-30 Hari</h4>
-                                                                <i class="ti-user"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <?php
+                                                        $tampil = "SELECT * FROM tagihan where tgl_akad = curdate()";
+                                                        $str = mysqli_query($connect, $tampil);
+                                                        while ($data = mysqli_fetch_array($str)) {
 
-
-                                        <!-- Zero config.table start -->
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5>DATA TAGIHAN</h5>
-                                                <!--         <span>Data Table Transaksi Penawaran Harga Customer</span> -->
-
-
-                                            </div>
-
-                                            <div class="card-block">
-
-
-                                                <div class="dt-responsive table-responsive">
-                                                    <table id="simpletable" class="table table-striped table-bordered nowrap">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>No Account</th>
-                                                                <th>Nama</th>
-                                                                <th>Tanggal Akad</th>
-                                                                <th>Kredit</th>
-                                                                <th>Tanggal JT</th>
-                                                                <th>Angsuran01</th>
-                                                                <th>Tagihan Pokok</th>
-                                                                <th>Tagihan Jasa</th>
-                                                                <th>Telp</th>
-                                                                <th>Kirim SMS</th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-
-                                                            <?php
-                                                            $tampil = "select * from tagihan";
-                                                            $str = mysqli_query($connect, $tampil);
-                                                            while ($data = mysqli_fetch_array($str)) {
-
-                                                                echo "<tr><td>" . $data[0] . "</td><td>" . $data[1] . "</td><td>" . $data[2] . "</td><td>" . $data[3] . "</td>
+                                                            echo "<tr><td>" . $data[0] . "</td><td>" . $data[1] . "</td><td>" . $data[2] . "</td><td>" . $data[3] . "</td>
                                                                 <td>" . $data[4] . "</td><td>" . $data[5] . "</td><td>" . $data[6] . "</td>
                                                                 <td>" . $data[7] . "</td><td>" . $data[8] . "</td>"
 
-                                                                ?>
-
-                                                                <td>
-                                                                    <a href=".php?kode=<?php echo $data['no']; ?>">
-                                                                        <button type="submit" class="btn btn-success btn-sm" name="aksi" value="edit">
-                                                                            <i class="fa fa-dot-circle-o"></i>SEND
-                                                                        </button>
-                                                                    </a>
-                                                                </td>
-
-                                                                <?php echo "</td></tr>";
-                                                            }
                                                             ?>
 
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <th>No Account</th>
-                                                                <th>Nama</th>
-                                                                <th>Tanggal Akad</th>
-                                                                <th>Kredit</th>
-                                                                <th>Tanggal JT</th>
-                                                                <th>Angsuran01</th>
-                                                                <th>Tagihan Pokok</th>
-                                                                <th>Tagihan Jasa</th>
-                                                                <th>Telp</th>
-                                                                <th>Kirim SMS</th>
+                                                            <td>
+                                                                <a href=".php?kode=<?php echo $data['no']; ?>">
+                                                                    <button type="submit" class="btn btn-success btn-sm" name="aksi" value="edit">
+                                                                        <i class="fa fa-dot-circle-o"></i>SEND
+                                                                    </button>
+                                                                </a>
+                                                            </td>
 
-                                                            </tr>
-                                                        </tfoot>
+                                                            <?php echo "</td></tr>";
+                                                        }
+                                                        ?>
 
-                                                    </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>No Account</th>
+                                                            <th>Nama</th>
+                                                            <th>Tanggal Akad</th>
+                                                            <th>Kredit</th>
+                                                            <th>Tanggal JT</th>
+                                                            <th>Angsuran01</th>
+                                                            <th>Tagihan Pokok</th>
+                                                            <th>Tagihan Jasa</th>
+                                                            <th>Telp</th>
+                                                            <th>Kirim SMS</th>
 
-                                                </div>
+                                                        </tr>
+                                                    </tfoot>
+
+                                                </table>
+
                                             </div>
                                         </div>
-                                        <!-- Zero config.table end -->
                                     </div>
-                                    <!-- Page-body start -->
+                                    <!-- Zero config.table end -->
+                                </div>
+                                <!-- Page-body start -->
 
-                                    <!-- Modal Peringatan -->
-                                    <div class="modal fade" tabindex="-1" role="dialog" id="delete">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Peringatan!</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form method="post" action="">
-                                                    <div class="modal-body">
-                                                        <h5>Hapus Data</h5><br>
-                                                        <p>Apakah anda yakin menghapus data SEMUA data TRANSAKSI<strong></strong></p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-sm waves-effect waves-light" data-dismiss="modal">Tidak</button>
-
-                                                        <a href="inq_spar-reset.php" class="btn btn-danger btn-sm waves-effect waves-light">Ya</a>
-
-                                                    </div>
-                                                </form>
+                                <!-- Modal Peringatan -->
+                                <div class="modal fade" tabindex="-1" role="dialog" id="delete">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Peringatan!</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
+                                            <form method="post" action="">
+                                                <div class="modal-body">
+                                                    <h5>Hapus Data</h5><br>
+                                                    <p>Apakah anda yakin menghapus data SEMUA data TRANSAKSI<strong></strong></p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm waves-effect waves-light" data-dismiss="modal">Tidak</button>
+
+                                                    <a href="inq_spar-reset.php" class="btn btn-danger btn-sm waves-effect waves-light">Ya</a>
+
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Main-body end -->
                         </div>
+                        <!-- Main-body end -->
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 

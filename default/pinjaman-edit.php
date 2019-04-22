@@ -268,7 +268,7 @@ include 'koneksi.php';
                                 <li class=" ">
                                     <a href="input-tagihan.php">
                                         <span class="pcoded-micon"><i class="ti-cloud-up"></i><b>DC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.animations.main">Input Data Pinjaman</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.animations.main">Input Data Pengajuan</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>

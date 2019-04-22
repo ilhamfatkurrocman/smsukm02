@@ -58,22 +58,22 @@
         for ($i = 2; $i <= $arrayCount; $i++) { // i = menunjukkan baris
             $no_accountx = trim($allDataInSheet[$i]["A"]); //mulai dari 2 karena 1 header
             $namax = trim($allDataInSheet[$i]["B"]); //kolom ke 2 
-            $telpx = trim($allDataInSheet[$i]["C"]);
-            $tgl_akadx = trim($allDataInSheet[$i]["D"]);
-            $kreditx = trim($allDataInSheet[$i]["E"]); //mulai dari 2 karena 1 header
-            $tgl_jtx = trim($allDataInSheet[$i]["F"]); //kolom ke 2 
-            $ang01x = trim($allDataInSheet[$i]["G"]);
-            $byr_pokokx = trim($allDataInSheet[$i]["H"]); //mulai dari 2 karena 1 header
-            $byr_bungax = trim($allDataInSheet[$i]["I"]);
+            $tgl_akadx = trim($allDataInSheet[$i]["C"]);
+            $kreditx = trim($allDataInSheet[$i]["D"]); //mulai dari 2 karena 1 header
+            $tgl_jtx = trim($allDataInSheet[$i]["E"]); //kolom ke 2 
+            $ang01x = trim($allDataInSheet[$i]["F"]);
+            $byr_pokokx = trim($allDataInSheet[$i]["G"]); //mulai dari 2 karena 1 header
+            $tagjasax = trim($allDataInSheet[$i]["H"]);
+            $telpx = trim($allDataInSheet[$i]["I"]);
             // $tot_angsuranx = trim($allDataInSheet[$i]["J"]);
             // $tot_tagihanx = trim($allDataInSheet[$i]["K"]);
 
-            $hasilx = $kreditx / $byr_pokokx;
-            $hasil2x = $byr_pokokx + $byr_bungax;
+            // $hasilx = $kreditx / $byr_pokokx;
+            // $hasil2x = $byr_pokokx + $byr_bungax;
 
        
 
-            $insertTable = mysqli_query($connect, "REPLACE into tagihan (no_account, nama, telp, tgl_akad, kredit, tgl_jt, ang01, byr_pokok, byr_bunga, tot_angsuran, tot_tagihan) values('" . $no_accountx . "', '" . $namax . "','" . $telpx . "','" . $tgl_akadx . "','" . $kreditx . "','" . $tgl_jtx . "','" . $ang01x . "','" . $byr_pokokx . "','" . $byr_bungax . "','" . $hasilx . "','" . $hasil2x . "');");
+            $insertTable = mysqli_query($connect, "REPLACE into tagihan (no_account, nama, tgl_akad, kredit, tgl_jt, ang01, byr_pokok, tagjasa, telp) values('" . $no_accountx . "', '" . $namax . "','" . $tgl_akadx . "','" . $kreditx . "','" . $tgl_jtx . "','" . $ang01x . "','" . $byr_pokokx . "','" . $tagjasax . "','" . $telpx . "');");
 
             //$msg = 'Record has been added. <div style="Padding:20px 0 0 0;"><a href="">Go Back to tutorial</a></div>';
             echo ("<META HTTP-EQUIV=\"Refresh\"CONTENT=\"0;URL=dasboard.php\">");
